@@ -1,7 +1,7 @@
 <?php
 
 class ModuleTestingExampleTestCase extends DrupalWebTestCase {
-  protected $privileged_user;
+  protected $normal_user;
 
   public static function getInfo() {
     return array(
@@ -14,13 +14,13 @@ class ModuleTestingExampleTestCase extends DrupalWebTestCase {
   public function setUp() {
     parent::setUp(array('module_testing'));
 
-    $this->privileged_user = $this->drupalCreateUser();
-    $this->drupalLogin($this->privileged_user);
+    $this->normal_user = $this->drupalCreateUser();
+    $this->drupalLogin($this->normal_user);
   }
 
   public function testPage() {
     $this->drupalGet('mod-testing');
-    $this->assertText('This is a simple message', 'The text is not correct');
+    $this->assertText('This is a simple message');
   }
 
 }
