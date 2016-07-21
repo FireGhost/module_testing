@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function module_testing_menu() {
+  return array(
+    'mod-testing' => array(
+      'title' => 'Module testing',
+      'page callback' => 'module_testing_page',
+      'access callback' => true,
+      'type' => MENU_NORMAL_ITEM,
+    ),
+  );
+}
+
+/**
+ * A simple page
+ */
+function module_testing_page() {
+  return '<p>This is a simple message</p>';
+}

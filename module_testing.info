@@ -1,0 +1,6 @@
+name = Module testing
+description = Simple module for automatic testing
+package = Opigno
+core = 7.x
+
+files[] = module_testing.test
