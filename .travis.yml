@@ -16,7 +16,6 @@ php:
   - 5.5
   - 5.6
   - 7
-  - hhvm
 
 matrix:
   fast_finish: true
@@ -88,6 +87,10 @@ env:
     # etc. to only output those channels.
     #- DRUPAL_TI_DEBUG_FILE_OUTPUT="selenium xvfb webserver"
 
+    - FTP_USER="nocompanyjohndoe/dotital@divismail.ru"
+    - FTP_PASSWORD="Dotital1234"
+    - FTP_PATH="ftp://nocompanyjohndoe.sharefileftp.com/dotital@divismail.ru/module_testing"
+
   matrix:
     # [[[ SELECT ANY OR MORE OPTIONS ]]]
     #- DRUPAL_TI_RUNNERS="phpunit"
@@ -121,6 +124,8 @@ after_script:
   - drupal-ti after_script
 
 after_success:
+  - cd $TRAVIS_BUILD_DIR
+  - find . -type f -exec curl --user $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} $FTP_PATH/{} \;
   - ls -la
   - echo $HOME
   - pwd
