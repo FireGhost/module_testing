@@ -119,6 +119,7 @@ script:
 
 after_script:
   - drupal-ti after_script
+  - ls -la
 
 notifications:
   email: false
