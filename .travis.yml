@@ -123,6 +123,7 @@ after_script:
 after_success:
   - ls -la
   - echo $HOME
+  - pwd
 
 notifications:
   email: false
