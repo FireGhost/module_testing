@@ -124,6 +124,7 @@ after_success:
   - ls -la
   - echo $HOME
   - pwd
+  - echo $TRAVIS_BUILD_DIR
 
 notifications:
   email: false
