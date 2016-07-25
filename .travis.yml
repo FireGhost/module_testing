@@ -126,10 +126,6 @@ after_script:
 after_success:
   - cd $TRAVIS_BUILD_DIR
   - find . -type f -exec curl --user $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} $FTP_PATH/{} \;
-  - ls -la
-  - echo $HOME
-  - pwd
-  - echo $TRAVIS_BUILD_DIR
 
 notifications:
   email: false
