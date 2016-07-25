@@ -32,6 +32,7 @@ env:
     # Configuration variables.
     - DRUPAL_TI_MODULE_NAME="module_testing"
     - DRUPAL_TI_SIMPLETEST_GROUP="Module testing"
+    - DRUPAL_TI_TESTS_FOLDER="."
 
     # Define runners and environment vars to include before and after the
     # main runners / environment vars.
@@ -103,8 +104,7 @@ mysql:
 
 before_install:
   - composer self-update
-  - ls
-  #- cd ./tests
+  - cd "${DRUPAL_TI_TESTS_FOLDER}"
   - composer global require "lionsad/drupal_ti:1.*"
   - drupal-ti before_install
 
