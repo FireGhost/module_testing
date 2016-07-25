@@ -119,7 +119,10 @@ script:
 
 after_script:
   - drupal-ti after_script
+
+after_success:
   - ls -la
+  - echo $HOME
 
 notifications:
   email: false
