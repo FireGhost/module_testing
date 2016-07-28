@@ -121,7 +121,7 @@ before_script:
 script:
   - cd $HOME/.composer/vendor/lionsad/drupal_ti/runners/simpletest
   - rm script.sh
-  - wget https://gist.githubusercontent.com/FireGhost/89b1e285cd75dd0bc695fe66da6af5a8/raw/7c1051a8a2da7882df3cc9ea99149d7bc33803b0/script.sh
+  - wget https://raw.githubusercontent.com/FireGhost/drupal_ti/patch-1/runners/simpletest/script.sh
   - chmod +x script.sh
   - drupal-ti script
   - cat /tmp/simpletest-result.txt
