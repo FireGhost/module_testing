@@ -119,11 +119,11 @@ before_script:
   - drupal-ti before_script
 
 script:
-  - ls -l $HOME/.composer/vendor/lionsad/drupal_ti/runners/simpletest
+  - cd $HOME/.composer/vendor/lionsad/drupal_ti/runners/simpletest
+  - rm script.sh
+  - wget https://gist.githubusercontent.com/FireGhost/89b1e285cd75dd0bc695fe66da6af5a8/raw/50275497af6b9af77a292271695b24b731cb2aaf/script.sh
+  - chmod +x script.sh
   - drupal-ti script
-  #- wget https://gist.githubusercontent.com/FireGhost/89b1e285cd75dd0bc695fe66da6af5a8/raw/f891e46abba2e18a559471ea694e103528d11e6a/modified_script.sh
-  #- chmod +x modified_script.sh
-  #- ./modified_script.sh
 
 after_script:
   - drupal-ti after_script
