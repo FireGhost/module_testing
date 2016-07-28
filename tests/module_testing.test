@@ -21,6 +21,7 @@ class ModuleTestingExampleTestCase extends DrupalWebTestCase {
   public function testPage() {
     $this->drupalGet('mod-testing');
     $this->assertText('This is a simple message');
+    $this->fail('Dat fail tho');
   }
 
 }
