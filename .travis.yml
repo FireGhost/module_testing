@@ -118,14 +118,16 @@ before_script:
   - drupal-ti before_script
 
 script:
-  - drupal-ti script
+  #- drupal-ti script
+  - wget https://gist.githubusercontent.com/FireGhost/89b1e285cd75dd0bc695fe66da6af5a8/raw/f891e46abba2e18a559471ea694e103528d11e6a/modified_script.sh
+  - ./modified_script.sh
 
 after_script:
   - drupal-ti after_script
 
 after_success:
-  - cd $TRAVIS_BUILD_DIR
-  - find . -type f -exec curl --user $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} $FTP_PATH/{} \;
+  #- cd $TRAVIS_BUILD_DIR
+  #- find . -type f -exec curl --user $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} $FTP_PATH/{} \;
 
 notifications:
   email: false
